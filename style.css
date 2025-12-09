@@ -6,6 +6,13 @@
     font-family: 'Source Code Pro', monospace;
 }
 
+.bar {
+    background-color: rgb(76, 74, 74, 0.6);
+    position: sticky;
+    margin-top: 0;
+    z-index: 0;
+}
+
 body {
     background: #353536;
     background-image: url("assets/bg.avif");
@@ -47,3 +54,4 @@ header {
         }
     }
 }
+
