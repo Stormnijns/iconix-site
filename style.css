@@ -2,4 +2,48 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: white;
+    font-family: 'Source Code Pro', monospace;
+}
+
+body {
+    background: #353536;
+    background-image: url("assets/bg.avif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header {
+    margin: .25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 10vh;
+    }
+    h1 {
+        margin-left: 5vh;
+        font-size: 4rem;
+        text-wrap: nowrap;
+    }
+}
+
+.front-page {
+    img {
+        position: absolute;
+        right: 1vh;
+        width: 50vh;
+    }
+    .dev-team {
+        height: 25vh;
+        .dev-team-list {
+            a {
+                text-decoration: none;
+            }
+            :hover {
+                background: #555555;
+            }
+        }
+    }
 }

